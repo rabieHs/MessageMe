@@ -8,11 +8,49 @@
 import SwiftUI
 
 struct SettingsView: View {
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color(.systemGroupedBackground)
+                .ignoresSafeArea(edges: .top)
+                
+                
+            VStack(spacing:32){
+              
+                     
+                SettingHeaderView()
+                
+                
+           
+                VStack(spacing:1){
+                    ForEach(SettingsCellViewModel.allCases,id: \.self){vm  in
+                        
+                        SettingsCell(vm: vm)
+                    }
+                }
+                    
+                Button{
+                    
+                }label: {
+                    Text("Logout")
+                        .foregroundStyle(Color(.systemRed))
+                        .frame(width: UIScreen.main.bounds.width,height: 50)
+                        .background(.sectionBG)
+
+                }
+               
+                    
+            
+                
+                
+                Spacer()
+            }
+        }
+       
     }
 }
 
 #Preview {
     SettingsView()
 }
+

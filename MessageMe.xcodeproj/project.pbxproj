@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E81998ED2C3BF72E002E9F72 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81998EC2C3BF72E002E9F72 /* SettingsHeaderView.swift */; };
+		E81998EF2C3BF7E7002E9F72 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81998EE2C3BF7E7002E9F72 /* SettingsCell.swift */; };
+		E81998F22C3C0522002E9F72 /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81998F12C3C0522002E9F72 /* SettingsCellViewModel.swift */; };
 		E866D8982C3A92D700E15969 /* MessageMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8972C3A92D700E15969 /* MessageMeApp.swift */; };
 		E866D89A2C3A92D700E15969 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8992C3A92D700E15969 /* ContentView.swift */; };
 		E866D89C2C3A92D900E15969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E866D89B2C3A92D900E15969 /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E81998EC2C3BF72E002E9F72 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
+		E81998EE2C3BF7E7002E9F72 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		E81998F12C3C0522002E9F72 /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
 		E866D8942C3A92D700E15969 /* MessageMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E866D8972C3A92D700E15969 /* MessageMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageMeApp.swift; sourceTree = "<group>"; };
 		E866D8992C3A92D700E15969 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E81998F02C3C0510002E9F72 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E81998F12C3C0522002E9F72 /* SettingsCellViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		E866D88B2C3A92D700E15969 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +114,7 @@
 		E866D8A82C3A935A00E15969 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E81998F02C3C0510002E9F72 /* Settings */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -178,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				E866D8C02C3AE19100E15969 /* SettingsView.swift */,
+				E81998EC2C3BF72E002E9F72 /* SettingsHeaderView.swift */,
+				E81998EE2C3BF7E7002E9F72 /* SettingsCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -260,13 +277,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81998ED2C3BF72E002E9F72 /* SettingsHeaderView.swift in Sources */,
 				E866D8AE2C3A981C00E15969 /* LoginView.swift in Sources */,
 				E866D8B02C3A983C00E15969 /* RegisterView.swift in Sources */,
 				E866D8B52C3AB02000E15969 /* CustomButton.swift in Sources */,
+				E81998EF2C3BF7E7002E9F72 /* SettingsCell.swift in Sources */,
 				E866D89A2C3A92D700E15969 /* ContentView.swift in Sources */,
 				E866D8BD2C3AE17B00E15969 /* ChannelsView.swift in Sources */,
 				E866D8C12C3AE19100E15969 /* SettingsView.swift in Sources */,
 				E866D8B82C3ADF8C00E15969 /* MainTabView.swift in Sources */,
+				E81998F22C3C0522002E9F72 /* SettingsCellViewModel.swift in Sources */,
 				E866D8BF2C3AE18500E15969 /* ChatsView.swift in Sources */,
 				E866D8982C3A92D700E15969 /* MessageMeApp.swift in Sources */,
 				E866D8C42C3AE1D300E15969 /* ConversationView.swift in Sources */,

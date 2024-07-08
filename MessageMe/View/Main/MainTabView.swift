@@ -16,6 +16,9 @@ struct MainTabView: View {
                 
                     .tabItem {
                         Image(systemName: "bubble.left")
+                            .onTapGesture {
+                                selectedIndex = 0
+                            }
                     }
                     .tag(0)
                 
@@ -24,6 +27,9 @@ struct MainTabView: View {
                     .tabItem {
                         
                         Image(systemName: "bubble.left.and.bubble.right")
+                            .onTapGesture {
+                                selectedIndex = 1
+                            }
                     }
                     .tag(1)
                 
@@ -31,12 +37,20 @@ struct MainTabView: View {
                    
                     .tabItem {
                         Image(systemName: "gear")
+                            .onTapGesture {
+                   
+
+                                selectedIndex = 2
+                            } .background(.white )
                     }
-                    .tag(2)
+                   
+                   
                 
             }
+            
             .navigationTitle(tabTitle)
         }
+        
       
     }
     

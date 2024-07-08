@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct SettingsCell: View {
+    let vm: SettingsCellViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack{
+                Image(systemName: vm.imageName)
+                    .frame(width: 22,height: 22)
+                    .padding(6)
+                    .background(vm.backgroundColor)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 6))
+                Text(vm.title)
+                    .fontWeight(.medium)
+                    Spacer()
+                Image(systemName: "chevron.right")
+            }
+            
+            .padding([.top,.horizontal])
+            Divider()
+                .padding(.leading)
+        }
+        .background(.sectionBG)
+        
+        
     }
 }
 
 #Preview {
-    SettingsCell()
+    SettingsCell(vm: SettingsCellViewModel(rawValue:  SettingsCellViewModel.account.rawValue)!)
 }

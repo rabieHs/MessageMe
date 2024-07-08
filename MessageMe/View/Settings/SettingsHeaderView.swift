@@ -7,12 +7,27 @@
 
 import SwiftUI
 
-struct SettingsHeaderView: View {
+struct SettingHeaderView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(systemName: "person")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 64,height: 64)
+                .clipShape(Circle())
+                .padding(.leading)
+            VStack(alignment:.leading,spacing:4){
+                Text("Rabie Houssaini")
+                    .fontWeight(.medium)
+                Text("available")
+                    .foregroundStyle(.gray)
+                
+            }
+            Spacer()
+        }
+        .frame(height: 80)
+        .background(Color(.sectionBG))
+        .padding(.top)
     }
 }
 
-#Preview {
-    SettingsHeaderView()
-}
