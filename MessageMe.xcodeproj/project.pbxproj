@@ -11,6 +11,15 @@
 		E866D89A2C3A92D700E15969 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8992C3A92D700E15969 /* ContentView.swift */; };
 		E866D89C2C3A92D900E15969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E866D89B2C3A92D900E15969 /* Assets.xcassets */; };
 		E866D89F2C3A92D900E15969 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E866D89E2C3A92D900E15969 /* Preview Assets.xcassets */; };
+		E866D8AE2C3A981C00E15969 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8AD2C3A981C00E15969 /* LoginView.swift */; };
+		E866D8B02C3A983C00E15969 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8AF2C3A983C00E15969 /* RegisterView.swift */; };
+		E866D8B32C3AAE2C00E15969 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8B22C3AAE2C00E15969 /* CustomTextField.swift */; };
+		E866D8B52C3AB02000E15969 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8B42C3AB02000E15969 /* CustomButton.swift */; };
+		E866D8B82C3ADF8C00E15969 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8B72C3ADF8C00E15969 /* MainTabView.swift */; };
+		E866D8BD2C3AE17B00E15969 /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8BC2C3AE17B00E15969 /* ChannelsView.swift */; };
+		E866D8BF2C3AE18500E15969 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8BE2C3AE18500E15969 /* ChatsView.swift */; };
+		E866D8C12C3AE19100E15969 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8C02C3AE19100E15969 /* SettingsView.swift */; };
+		E866D8C42C3AE1D300E15969 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8C32C3AE1D300E15969 /* ConversationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +28,15 @@
 		E866D8992C3A92D700E15969 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E866D89B2C3A92D900E15969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E866D89E2C3A92D900E15969 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E866D8AD2C3A981C00E15969 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E866D8AF2C3A983C00E15969 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		E866D8B22C3AAE2C00E15969 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E866D8B42C3AB02000E15969 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E866D8B72C3ADF8C00E15969 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		E866D8BC2C3AE17B00E15969 /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
+		E866D8BE2C3AE18500E15969 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		E866D8C02C3AE19100E15969 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E866D8C32C3AE1D300E15969 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +69,11 @@
 		E866D8962C3A92D700E15969 /* MessageMe */ = {
 			isa = PBXGroup;
 			children = (
+				E866D8AB2C3A93E100E15969 /* Utils */,
+				E866D8AA2C3A936000E15969 /* Model */,
+				E866D8A92C3A935C00E15969 /* View */,
+				E866D8A82C3A935A00E15969 /* ViewModel */,
+				E866D8A52C3A934400E15969 /* API */,
 				E866D8972C3A92D700E15969 /* MessageMeApp.swift */,
 				E866D8992C3A92D700E15969 /* ContentView.swift */,
 				E866D89B2C3A92D900E15969 /* Assets.xcassets */,
@@ -65,6 +88,106 @@
 				E866D89E2C3A92D900E15969 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E866D8A52C3A934400E15969 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E866D8A82C3A935A00E15969 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E866D8A92C3A935C00E15969 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E866D8C22C3AE1C200E15969 /* Conversations */,
+				E866D8BB2C3AE16D00E15969 /* Settings */,
+				E866D8BA2C3AE16600E15969 /* Chats */,
+				E866D8B92C3AE15E00E15969 /* Channels */,
+				E866D8B62C3ADF5A00E15969 /* Main */,
+				E866D8AC2C3A97EE00E15969 /* Authentication */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E866D8AA2C3A936000E15969 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E866D8AB2C3A93E100E15969 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E866D8B12C3AAE1500E15969 /* Views */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E866D8AC2C3A97EE00E15969 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E866D8AD2C3A981C00E15969 /* LoginView.swift */,
+				E866D8AF2C3A983C00E15969 /* RegisterView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E866D8B12C3AAE1500E15969 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E866D8B22C3AAE2C00E15969 /* CustomTextField.swift */,
+				E866D8B42C3AB02000E15969 /* CustomButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E866D8B62C3ADF5A00E15969 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E866D8B72C3ADF8C00E15969 /* MainTabView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E866D8B92C3AE15E00E15969 /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				E866D8BC2C3AE17B00E15969 /* ChannelsView.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		E866D8BA2C3AE16600E15969 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				E866D8BE2C3AE18500E15969 /* ChatsView.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		E866D8BB2C3AE16D00E15969 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E866D8C02C3AE19100E15969 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E866D8C22C3AE1C200E15969 /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				E866D8C32C3AE1D300E15969 /* ConversationView.swift */,
+			);
+			path = Conversations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +260,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E866D8AE2C3A981C00E15969 /* LoginView.swift in Sources */,
+				E866D8B02C3A983C00E15969 /* RegisterView.swift in Sources */,
+				E866D8B52C3AB02000E15969 /* CustomButton.swift in Sources */,
 				E866D89A2C3A92D700E15969 /* ContentView.swift in Sources */,
+				E866D8BD2C3AE17B00E15969 /* ChannelsView.swift in Sources */,
+				E866D8C12C3AE19100E15969 /* SettingsView.swift in Sources */,
+				E866D8B82C3ADF8C00E15969 /* MainTabView.swift in Sources */,
+				E866D8BF2C3AE18500E15969 /* ChatsView.swift in Sources */,
 				E866D8982C3A92D700E15969 /* MessageMeApp.swift in Sources */,
+				E866D8C42C3AE1D300E15969 /* ConversationView.swift in Sources */,
+				E866D8B32C3AAE2C00E15969 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

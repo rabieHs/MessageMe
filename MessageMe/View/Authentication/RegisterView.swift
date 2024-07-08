@@ -8,8 +8,63 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @State private var email = ""
+    @State private var password = ""
+    @State private var username = ""
+    @State private var fullname = ""
+    
+    @Environment(\.dismiss) var dismiss
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            VStack(alignment:.leading){
+                HStack{
+                    Spacer()
+                }
+                Text("Get Started")
+                    .font(.largeTitle)
+                    .bold()
+                Text("Create Your Account")
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundStyle(.blue)
+                
+                VStack(spacing:20){
+                    
+                    CustomTextField(isSecureField:false,imageName: "envelope", placeholder: "Email", text: $email)
+                    
+                    CustomTextField(isSecureField:false,imageName: "person", placeholder: "Username", text: $username)
+                    
+                    CustomTextField(isSecureField:false,imageName: "person", placeholder: "Full Name", text: $fullname)
+                    
+                    CustomTextField(isSecureField:true,imageName: "lock", placeholder: "Password", text: $password)
+                    
+                }
+                .padding([.top,.horizontal],32)
+                
+           
+            }.padding()
+            
+            Button(action: {
+            }, label: {
+                CustomButton(title: "Register")
+            })
+            .shadow(color: .gray, radius: 10)
+            Spacer()
+            Button {
+                dismiss()
+
+            } label: {
+                HStack(spacing:10) {
+                    Text("Already have an Account?")
+                    .foregroundStyle(.blue)
+                    Text("Sign In")
+                    .foregroundStyle(.blue)
+                    .bold()
+                    
+                }
+            }
+
+        }
     }
 }
 
