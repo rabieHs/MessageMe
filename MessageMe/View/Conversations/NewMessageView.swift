@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct NewMessageView: View {
+    @Binding var showNewMessageView : Bool
+    @Binding var showChatView : Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            VStack{
+                List(0 ..< 3){conversation in
+                 UserCell()
+                        .listRowSeparator(.hidden)
+                        .onTapGesture {
+                            print("user taped")
+                            showNewMessageView = false
+                            showChatView = true
+                        }
+                }
+                .listStyle(.plain)
+            }.searchable(text: .constant(""))
+                .navigationTitle("New Message")
+        }
     }
 }
 
-#Preview {
-    NewMessageView()
-}

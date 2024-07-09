@@ -6,3 +6,8 @@
 //
 
 import Foundation
+struct Message: Identifiable{
+    var id = UUID()
+    let isFromCurrentUser: Bool
+    let messageText:String
+}

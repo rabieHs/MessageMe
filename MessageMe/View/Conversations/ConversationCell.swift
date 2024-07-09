@@ -19,10 +19,16 @@ struct ConversationCell: View {
             VStack(alignment:.leading){
                 Text("Rabie Houssaini")
                     .fontWeight(.semibold)
-                Text("Rabie Houssaini")
+                Text("this is a static message from Developer ")
+                    .lineLimit(1)
+                    .foregroundStyle(Color(.systemGray))
                     
             }
-        }
+          
+        } .padding(.top,6)
+            .padding(.horizontal)
+        .frame(width: UIScreen.main.bounds.width,alignment: .leading)
+       
     }
 }
 

@@ -9,7 +9,27 @@ import SwiftUI
 
 struct UserCell: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Image("profile")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 40,height: 40)
+                .clipShape(Circle())
+            
+            VStack(alignment:.leading){
+                Text("Rabie Houssaini")
+                    .fontWeight(.semibold)
+                Text("Available ")
+                    .lineLimit(1)
+                    .foregroundStyle(Color(.systemGray))
+                    
+            }
+          
+        } .padding(.top,6)
+            .padding(.horizontal)
+        .frame(width: UIScreen.main.bounds.width,alignment: .leading)
+       
+    
     }
 }
 

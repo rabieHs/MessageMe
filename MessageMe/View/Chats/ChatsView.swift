@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct ChatsView: View {
+    @State var messageText = ""
+    @ObservedObject var vm = ChatViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            ScrollView{
+                VStack(alignment:.leading,spacing: 12){
+                    ForEach(vm.messages) { message in
+                        MessageView(isFromCurrentUser: message.isFromCurrentUser,messageText: message.messageText)
+                    }
+                    
+                }
+            }
+        }
+        .navigationTitle("Rabie")
+        .navigationBarTitleDisplayMode(.inline)
+        .padding(.bottom)
+        
+        CustomInputView(text: $messageText) {
+            vm.sendMessage(messageText)
+        }
     }
 }
 
