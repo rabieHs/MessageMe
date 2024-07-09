@@ -38,11 +38,10 @@ struct MainTabView: View {
                     .tabItem {
                         Image(systemName: "gear")
                             .onTapGesture {
-                   
-
-                                selectedIndex = 2
+                          selectedIndex = 2
                             } .background(.white )
                     }
+                    .tag(2)
                    
                    
                 

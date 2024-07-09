@@ -10,44 +10,45 @@ import SwiftUI
 struct SettingsView: View {
 
     var body: some View {
-        ZStack{
-            Color(.systemGroupedBackground)
-                .ignoresSafeArea(edges: .top)
-                
-                
-            VStack(spacing:32){
-              
+        Form{
+         
+
                      
-                SettingHeaderView()
+                Section{
+                    NavigationLink(destination: EditProfileView()) {
+                        SettingHeaderView()
+                    }
+                    
+                    
+                }
                 
-                
-           
-                VStack(spacing:1){
-                    ForEach(SettingsCellViewModel.allCases,id: \.self){vm  in
+ 
+                Section{
+                    
+                        List(SettingsCellViewModel.allCases,id: \.self){vm  in
+                            
+                            SettingsCell(vm: vm)
                         
-                        SettingsCell(vm: vm)
+                    }
+                       
+                }
+                    
+                Section{
+                    Button{
+                        
+                    }label: {
+                        Text("Logout")
+                            .foregroundStyle(Color(.systemRed))
+                            .frame(width: UIScreen.main.bounds.width)
+                            .background(.sectionBG)
+
                     }
                 }
-                    
-                Button{
-                    
-                }label: {
-                    Text("Logout")
-                        .foregroundStyle(Color(.systemRed))
-                        .frame(width: UIScreen.main.bounds.width,height: 50)
-                        .background(.sectionBG)
-
-                }
-               
-                    
-            
-                
-                
-                Spacer()
+             
             }
         }
        
-    }
+    
 }
 
 #Preview {

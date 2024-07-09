@@ -10,15 +10,19 @@ import SwiftUI
 struct SettingHeaderView: View {
     var body: some View {
         HStack {
-            Image(systemName: "person")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 64,height: 64)
-                .clipShape(Circle())
-                .padding(.leading)
+          
+                Image(systemName: "person")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 64,height: 64)
+                    .clipShape(Circle())
+                    .padding(.leading)
+          
+          
             VStack(alignment:.leading,spacing:4){
                 Text("Rabie Houssaini")
                     .fontWeight(.medium)
+                    .foregroundStyle(.textBG)
                 Text("available")
                     .foregroundStyle(.gray)
                 

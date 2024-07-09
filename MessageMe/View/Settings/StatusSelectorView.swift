@@ -8,8 +8,36 @@
 import SwiftUI
 
 struct StatusSelectorView: View {
+    @StateObject var vm = StatusViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form{
+          
+                Section {
+                    Text(vm.userStatus.statusText)
+                } header: {
+                    Text("CURRENT SET TO")
+                }
+            Section {
+                List(Userstatus.allCases,id: \.self){status in
+                    Button{
+                        vm.updateStatus(status)
+                    }label: {
+                        Text(status.statusText)
+                           
+                    }
+                    .foregroundStyle(.textBG)
+                    
+                }
+                
+            } header: {
+                Text("SELECT YOUR STATUS")
+            }
+                
+            
+
+        }
+        .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

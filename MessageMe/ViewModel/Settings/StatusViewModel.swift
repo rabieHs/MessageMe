@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class StatusViewModel : ObservableObject{
+    @Published var userStatus: Userstatus = .Available
+    
+    func updateStatus(_ status: Userstatus){
+        userStatus = status
+    }
+}

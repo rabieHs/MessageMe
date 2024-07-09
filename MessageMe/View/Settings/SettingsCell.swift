@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsCell: View {
     let vm: SettingsCellViewModel
     var body: some View {
-        VStack {
+        
             HStack{
                 Image(systemName: vm.imageName)
                     .frame(width: 22,height: 22)
@@ -23,12 +23,12 @@ struct SettingsCell: View {
                     Spacer()
                 Image(systemName: "chevron.right")
             }
+            .padding(.top)
             
-            .padding([.top,.horizontal])
-            Divider()
-                .padding(.leading)
-        }
-        .background(.sectionBG)
+         
+          
+        
+   
         
         
     }
