@@ -12,6 +12,7 @@ struct RegisterView: View {
     @State private var password = ""
     @State private var username = ""
     @State private var fullname = ""
+    @ObservedObject var vm = AuthenticationViewModel()
     
     @Environment(\.dismiss) var dismiss
     var body: some View {
@@ -45,6 +46,7 @@ struct RegisterView: View {
             }.padding()
             
             Button(action: {
+                vm.register(email: email, password: password, fullname: fullname, username: username) 
             }, label: {
                 CustomButton(title: "Register")
             })
@@ -64,6 +66,10 @@ struct RegisterView: View {
                 }
             }
 
+        }
+        .navigationDestination(isPresented: $vm.isSignedUp) {
+            MainTabView()
+                .navigationBarBackButtonHidden()
         }
     }
 }

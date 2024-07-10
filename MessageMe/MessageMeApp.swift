@@ -6,14 +6,20 @@
 //
 
 import SwiftUI
+import FirebaseCore
+
+
 
 @main
 struct MessageMeApp: App {
+    init(){
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
-               MainTabView()
-            }
+         
+               LoginView()
+            
         }
     }
 }
