@@ -8,13 +8,13 @@
 import Foundation
 
 class ChatViewModel : ObservableObject{
-    @Published var messages =  [Message]()
+    @Published var messages =  [MockMessage]()
     
     init() {
         messages = mockMessages
     }
     
-    var mockMessages: [Message] {
+    var mockMessages: [MockMessage] {
         [
             .init(isFromCurrentUser: true, messageText: "hey"),
             .init(isFromCurrentUser: false, messageText: "how are you"),
@@ -27,6 +27,6 @@ class ChatViewModel : ObservableObject{
     }
     
     func sendMessage(_ messageText:String){
-        messages.append(Message(isFromCurrentUser: true, messageText: messageText))
+        messages.append(MockMessage(isFromCurrentUser: true, messageText: messageText))
     }
 }

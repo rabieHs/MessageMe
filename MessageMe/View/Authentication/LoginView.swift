@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
-    @ObservedObject private var vm = AuthenticationViewModel()
+    @EnvironmentObject private var vm: AuthenticationViewModel
     var body: some View {
        
         NavigationStack {
@@ -50,7 +50,9 @@ struct LoginView: View {
                         }
 
                     }
-                    Button(action: {}, label: {
+                    Button(action: {
+                        vm.login(email: email, password: password)
+                    }, label: {
                         CustomButton(title: "Login")
                     })
                     .shadow(color: .gray, radius: 10)

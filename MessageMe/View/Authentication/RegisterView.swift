@@ -12,8 +12,8 @@ struct RegisterView: View {
     @State private var password = ""
     @State private var username = ""
     @State private var fullname = ""
-    @ObservedObject var vm = AuthenticationViewModel()
-    
+    @EnvironmentObject private var vm: AuthenticationViewModel
+
     @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack{
@@ -67,10 +67,7 @@ struct RegisterView: View {
             }
 
         }
-        .navigationDestination(isPresented: $vm.isSignedUp) {
-            MainTabView()
-                .navigationBarBackButtonHidden()
-        }
+      
     }
 }
 

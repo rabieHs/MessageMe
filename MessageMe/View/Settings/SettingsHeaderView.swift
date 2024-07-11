@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct SettingHeaderView: View {
+    let user: User
     var body: some View {
         HStack {
           
-                Image(systemName: "person")
+            KFImage(URL(string: user.profileImage))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 64,height: 64)
@@ -20,7 +21,7 @@ struct SettingHeaderView: View {
           
           
             VStack(alignment:.leading,spacing:4){
-                Text("Rabie Houssaini")
+                Text(user.username)
                     .fontWeight(.medium)
                     .foregroundStyle(.textBG)
                 Text("available")
@@ -30,7 +31,7 @@ struct SettingHeaderView: View {
             Spacer()
         }
         .frame(height: 80)
-        .background(Color(.sectionBG))
+      
         .padding(.top)
     }
 }

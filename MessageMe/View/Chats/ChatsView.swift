@@ -10,6 +10,10 @@ import SwiftUI
 struct ChatsView: View {
     @State var messageText = ""
     @ObservedObject var vm = ChatViewModel()
+   private  let user: User
+    init(user:User) {
+        self.user = user
+    }
     var body: some View {
         VStack{
             ScrollView{
@@ -21,7 +25,7 @@ struct ChatsView: View {
                 }
             }
         }
-        .navigationTitle("Rabie")
+        .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
         .padding(.bottom)
         
@@ -31,6 +35,4 @@ struct ChatsView: View {
     }
 }
 
-#Preview {
-    ChatsView()
-}
+

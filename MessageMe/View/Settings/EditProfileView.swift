@@ -7,8 +7,9 @@
 
 import SwiftUI
 import PhotosUI
-
+import Kingfisher
 struct EditProfileView: View {
+    let user: User
     @State private var FullName = "Rabie Houssaini"
     @StateObject var vm = ProfileImageViewModel()
 
@@ -24,7 +25,7 @@ struct EditProfileView: View {
                             VStack{
                             
                                 if vm.profileImage == nil {
-                                    Image("profile")
+                                    KFImage(URL(string: user.profileImage))
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: 64,height: 64)
@@ -45,7 +46,7 @@ struct EditProfileView: View {
        
                                     }.onChange(of: vm.selectedImage) { oldValue, newValue in
                                             Task{
-                                             try  await vm.changePhoto()
+                                             try  await vm.changePhoto(for: user)
                                             }
                                         
                                     }
@@ -87,5 +88,5 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView()
+    EditProfileView(user: User(id: "", username: "", fullname: "", email: "", profileImage: "https://i.pravatac.cc/100"))
 }

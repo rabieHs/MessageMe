@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct SettingsView: View {
-
+    @EnvironmentObject var authViewModel : AuthenticationViewModel
+    
+ 
     var body: some View {
         Form{
          
 
                      
                 Section{
-                    NavigationLink(destination: EditProfileView()) {
-                        SettingHeaderView()
+                    NavigationLink(destination: EditProfileView(user: authViewModel.user!)) {
+                        SettingHeaderView(user: authViewModel.user!)
                     }
                     
                     
@@ -35,12 +37,12 @@ struct SettingsView: View {
                     
                 Section{
                     Button{
-                        
+                        authViewModel.signout()
                     }label: {
                         Text("Logout")
                             .foregroundStyle(Color(.systemRed))
                             .frame(width: UIScreen.main.bounds.width)
-                            .background(.sectionBG)
+                          
 
                     }
                 }

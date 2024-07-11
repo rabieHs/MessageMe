@@ -6,18 +6,34 @@
 //
 
 import Firebase
-
+import FirebaseFirestoreSwift
 class AuthenticationViewModel: NSObject, ObservableObject{
-    @Published var isSignedUp = false
-    private var currentUser: FirebaseAuth.User?
+
+    @Published var userSession : FirebaseAuth.User?
+    @Published var user: User?
     
-    func login(){
-        
+    override init() {
+        super.init()
+
+         userSession = Auth.auth().currentUser
+        if userSession != nil {
+            self.fetchUser()
+        }
+    }
+    
+    func login(email: String, password: String){
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let _ = error {return}
+            guard let user = result?.user else {return}
+            self.userSession = user
+            self.fetchUser()
+
+        }
     }
     
     func register(email:String, password:String,fullname: String,username:String){
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            if let error = error {
+            if let _ = error {
                 print("error registering user from auth")
                 return
             }
@@ -30,8 +46,8 @@ class AuthenticationViewModel: NSObject, ObservableObject{
             
             Firestore.firestore().collection("users").document(userModel.id).setData(userModel.asDictionary()) { error in
                 print("user data successfully updated")
-                self.currentUser = user
-                self.isSignedUp = true
+                self.userSession = user
+                self.fetchUser()
               
             }
             
@@ -39,14 +55,23 @@ class AuthenticationViewModel: NSObject, ObservableObject{
         }
     }
     
-    func uploadProfileImage(_ image: UIImage){
-        guard let uid = currentUser?.uid else{return}
-        ImageUploader.uploadImage(image: image) { imageURL in
-            Firestore.firestore().collection("users").document(uid).updateData(["profileImage": imageURL])
-        }
-    }
+   
     
     func signout(){
-        
+        try? Auth.auth().signOut()
+        userSession = nil
+    }
+    
+    func fetchUser(){
+        guard let uid = userSession?.uid else {return}
+        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
+            
+           // guard let data = snapshot?.data() else {return}
+            guard  let userModel = try? snapshot?.data(as: User.self) else{
+                print("error converting user")
+                return }
+            self.user = userModel
+            print(userModel.username)
+        }
     }
 }
