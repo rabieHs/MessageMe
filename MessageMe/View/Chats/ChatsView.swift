@@ -10,6 +10,7 @@ import SwiftUI
 struct ChatsView: View {
     @State var messageText = ""
     @ObservedObject var vm = ChatViewModel()
+    @EnvironmentObject var authViewModel : AuthenticationViewModel
    private  let user: User
     init(user:User) {
         self.user = user
@@ -19,18 +20,20 @@ struct ChatsView: View {
             ScrollView{
                 VStack(alignment:.leading,spacing: 12){
                     ForEach(vm.messages) { message in
-                        MessageView(isFromCurrentUser: message.isFromCurrentUser,messageText: message.messageText)
+                        MessageView(isFromCurrentUser: message.senderId != user.id,messageText: message.text)
                     }
                     
                 }
             }
+        }.task{
+          await  vm.getMessages(for: authViewModel.user!, currentUser: user)
         }
         .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
         .padding(.bottom)
         
         CustomInputView(text: $messageText) {
-            vm.sendMessage(messageText)
+            vm.sendMessage(for: user, currentUser: authViewModel.user!, message: messageText)
         }
     }
 }
