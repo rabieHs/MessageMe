@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ConversationCell: View {
+    
     var body: some View {
         HStack{
             Image("profile")

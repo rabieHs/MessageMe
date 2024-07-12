@@ -9,7 +9,7 @@ import Foundation
 struct Conversation: Codable, Identifiable {
     let id: String?
     let messages: [Message]
-    let users: String
+    let users: [String]
     let isGroup: Bool
     
 }

@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct MessageView: View {
-    var isFromCurrentUser: Bool
-    var messageText: String
+
+    let viewModel: MessageViewModel
     
     var body: some View {
         HStack{
-            if isFromCurrentUser {
+            if  viewModel.isFromCurrentUSer {
                 Spacer()
-                Text(messageText)
+                Text( viewModel.message.text)
                     .padding(12)
                     .background(Color(.systemBlue))
                     .foregroundStyle(.white)
-                    .clipShape(ChatBubble(isFromCurrentUSer: isFromCurrentUser))
+                    .clipShape(ChatBubble(isFromCurrentUSer: viewModel.isFromCurrentUSer))
                     .padding(.horizontal)
                     .padding(.leading,80)
                 
@@ -31,10 +31,10 @@ struct MessageView: View {
                         .frame(width: 32,height: 32)
                         .clipShape(Circle())
                     
-                    Text(messageText)
+                    Text(viewModel.message.text)
                         .padding(12)
                         .background(Color(.systemGray5))
-                        .clipShape(ChatBubble(isFromCurrentUSer: isFromCurrentUser))
+                        .clipShape(ChatBubble(isFromCurrentUSer:  viewModel.isFromCurrentUSer))
                     
                     
                 }
@@ -46,6 +46,3 @@ struct MessageView: View {
     }
 }
 
-#Preview {
-    MessageView(isFromCurrentUser: true,messageText: "")
-}

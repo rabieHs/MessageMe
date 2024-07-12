@@ -15,8 +15,8 @@ struct MockMessage: Identifiable{
 
 struct Message: Identifiable,Codable{
     var id : String?
-    let rcieverId: String
-    let senderId: String
+    let fromId: String
+    let toId: String
     let read : Bool
     let timestamp: Timestamp
     let text: String

@@ -11,7 +11,7 @@ class AuthenticationViewModel: NSObject, ObservableObject{
 
     @Published var userSession : FirebaseAuth.User?
     @Published var user: User?
-    
+    static let shared = AuthenticationViewModel()
     override init() {
         super.init()
 
@@ -71,6 +71,7 @@ class AuthenticationViewModel: NSObject, ObservableObject{
                 print("error converting user")
                 return }
             self.user = userModel
+            
             print(userModel.username)
         }
     }

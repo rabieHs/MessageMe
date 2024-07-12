@@ -33,6 +33,7 @@
 		E809A3442C3EF81C00403EF5 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809A3432C3EF81C00403EF5 /* ImageUploader.swift */; };
 		E80F54542C41406E00F184FF /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F54532C41406E00F184FF /* Conversation.swift */; };
 		E80F54562C41414A00F184FF /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F54552C41414A00F184FF /* ChatAPI.swift */; };
+		E80F54582C41D4DA00F184FF /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F54572C41D4D900F184FF /* MessageViewModel.swift */; };
 		E81998ED2C3BF72E002E9F72 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81998EC2C3BF72E002E9F72 /* SettingsHeaderView.swift */; };
 		E81998EF2C3BF7E7002E9F72 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81998EE2C3BF7E7002E9F72 /* SettingsCell.swift */; };
 		E81998F22C3C0522002E9F72 /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81998F12C3C0522002E9F72 /* SettingsCellViewModel.swift */; };
@@ -74,6 +75,7 @@
 		E809A3432C3EF81C00403EF5 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		E80F54532C41406E00F184FF /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		E80F54552C41414A00F184FF /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
+		E80F54572C41D4D900F184FF /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		E81998EC2C3BF72E002E9F72 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		E81998EE2C3BF7E7002E9F72 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		E81998F12C3C0522002E9F72 /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				E809A3282C3D90B300403EF5 /* ChatViewModel.swift */,
 				E871C65E2C4019CB009A9AF0 /* NewMessagesViewModel.swift */,
+				E80F54572C41D4D900F184FF /* MessageViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				E866D8C42C3AE1D300E15969 /* ConversationView.swift in Sources */,
 				E80F54562C41414A00F184FF /* ChatAPI.swift in Sources */,
 				E809A3162C3D528100403EF5 /* StatusViewModel.swift in Sources */,
+				E80F54582C41D4DA00F184FF /* MessageViewModel.swift in Sources */,
 				E809A31E2C3D750400403EF5 /* UserCell.swift in Sources */,
 				E866D8B32C3AAE2C00E15969 /* CustomTextField.swift in Sources */,
 			);

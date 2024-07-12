@@ -9,20 +9,22 @@ import Foundation
 
 class ChatViewModel : ObservableObject{
     @Published var messages : [Message] = []
+    @Published var conversations : [Conversation] = []
     let chatApi = ChatAPI()
-  
-    func  getMessages(for user:User,currentUser: User) {
-         chatApi.fetchMessages(with: user, currentUser: currentUser){ messages in
-            print("view model messages: \(messages)")
-   
-                self.messages = messages
-            
-           
+    let user:User
+    init(user:User) {
+        self.user = user
+        fetchMessages()
+    }
+
+    func fetchMessages(){
+        chatApi.fetchMessages(with: user) { messages in
+            self.messages = messages
         }
     }
     
-    func sendMessage(for user:User,currentUser: User, message:String ){
-        chatApi.sendMessage(with: user, currentUser: currentUser, messageText: message)
+    func sendMessage( message:String ){
+        chatApi.sendMessage(message, user: user)
     }
     
     
