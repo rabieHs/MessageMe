@@ -120,6 +120,14 @@ class ChatAPI {
         
     }  
     
+    func createChannel(users: [String], name: String,completion: @escaping(Channel)->Void){
+        let channelId = UUID().uuidString
+        let channel = Channel(id:channelId, name: name, users: users, messages: [])
+        Firestore.firestore().collection("channels").document(channelId).setData(channel.asDictionary()) { error in
+            completion(channel)
+        }
+    }
+    
 
 
 }

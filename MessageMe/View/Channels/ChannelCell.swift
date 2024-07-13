@@ -1,38 +1,35 @@
 //
-//  UserCell.swift
+//  ChannelCell.swift
 //  MessageMe
 //
-//  Created by rabie houssaini on 9/7/2024.
+//  Created by rabie houssaini on 13/7/2024.
 //
 
+import Foundation
 import SwiftUI
 import Kingfisher
-struct UserCell: View {
-    let user: User
+struct ChannelCell: View {
+    let conversationViewModel : ConversationViewModel
     var body: some View {
         HStack{
-            KFImage(URL(string:user.profileImage))
+            KFImage(conversationViewModel.userProfileImage)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 40,height: 40)
+                .frame(width: 48,height: 48)
                 .clipShape(Circle())
             
             VStack(alignment:.leading){
-                Text(user.username)
+                Text(conversationViewModel.conversation.user?.username ?? "null")
                     .fontWeight(.semibold)
-                Text(user.fullname)
+                Text(conversationViewModel.conversationLastMessage ?? "null")
                     .lineLimit(1)
                     .foregroundStyle(Color(.systemGray))
                     
             }
-            Spacer()
           
         } .padding(.top,6)
             .padding(.horizontal)
-        .frame(alignment: .leading)
+        .frame(width: UIScreen.main.bounds.width,alignment: .leading)
        
-    
     }
 }
-
-
