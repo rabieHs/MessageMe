@@ -53,6 +53,8 @@
 		E866D8C42C3AE1D300E15969 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866D8C32C3AE1D300E15969 /* ConversationView.swift */; };
 		E871C65D2C401369009A9AF0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E871C65C2C401369009A9AF0 /* Kingfisher */; };
 		E871C65F2C4019CB009A9AF0 /* NewMessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E871C65E2C4019CB009A9AF0 /* NewMessagesViewModel.swift */; };
+		E8F2AF6C2C42A3BC0066D610 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2AF6B2C42A3BC0066D610 /* ConversationViewModel.swift */; };
+		E8F2AF6E2C42A6F70066D610 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2AF6D2C42A6F70066D610 /* ConversationsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,8 @@
 		E866D8C02C3AE19100E15969 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E866D8C32C3AE1D300E15969 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 		E871C65E2C4019CB009A9AF0 /* NewMessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessagesViewModel.swift; sourceTree = "<group>"; };
+		E8F2AF6B2C42A3BC0066D610 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		E8F2AF6D2C42A6F70066D610 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				E809A3282C3D90B300403EF5 /* ChatViewModel.swift */,
 				E871C65E2C4019CB009A9AF0 /* NewMessagesViewModel.swift */,
 				E80F54572C41D4D900F184FF /* MessageViewModel.swift */,
+				E8F2AF6B2C42A3BC0066D610 /* ConversationViewModel.swift */,
+				E8F2AF6D2C42A6F70066D610 /* ConversationsViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 				E866D8B52C3AB02000E15969 /* CustomButton.swift in Sources */,
 				E809A3292C3D90B300403EF5 /* ChatViewModel.swift in Sources */,
 				E809A33F2C3EE54200403EF5 /* User.swift in Sources */,
+				E8F2AF6E2C42A6F70066D610 /* ConversationsViewModel.swift in Sources */,
 				E81998EF2C3BF7E7002E9F72 /* SettingsCell.swift in Sources */,
 				E809A31A2C3D6FEF00403EF5 /* ConversationCell.swift in Sources */,
 				E809A3422C3EE5A600403EF5 /* Dictionary.swift in Sources */,
@@ -423,6 +430,7 @@
 				E866D8B82C3ADF8C00E15969 /* MainTabView.swift in Sources */,
 				E81998F22C3C0522002E9F72 /* SettingsCellViewModel.swift in Sources */,
 				E866D8BF2C3AE18500E15969 /* ChatsView.swift in Sources */,
+				E8F2AF6C2C42A3BC0066D610 /* ConversationViewModel.swift in Sources */,
 				E809A3242C3D8CEA00403EF5 /* CustomInputView.swift in Sources */,
 				E866D8982C3A92D700E15969 /* MessageMeApp.swift in Sources */,
 				E80F54542C41406E00F184FF /* Conversation.swift in Sources */,

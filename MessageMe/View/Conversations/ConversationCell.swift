@@ -6,21 +6,21 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct ConversationCell: View {
-    
+    let conversationViewModel : ConversationViewModel
     var body: some View {
         HStack{
-            Image("profile")
+            KFImage(conversationViewModel.userProfileImage)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 48,height: 48)
                 .clipShape(Circle())
             
             VStack(alignment:.leading){
-                Text("Rabie Houssaini")
+                Text(conversationViewModel.conversation.user?.username ?? "null")
                     .fontWeight(.semibold)
-                Text("this is a static message from Developer ")
+                Text(conversationViewModel.conversationLastMessage ?? "null")
                     .lineLimit(1)
                     .foregroundStyle(Color(.systemGray))
                     
@@ -33,6 +33,4 @@ struct ConversationCell: View {
     }
 }
 
-#Preview {
-    ConversationCell()
-}
+

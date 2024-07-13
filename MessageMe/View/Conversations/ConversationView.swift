@@ -11,15 +11,22 @@ struct ConversationView: View {
     @State var showNewMessageView = false
     @State var showChatView = false
     @State var selectedUser: User?
+  @ObservedObject var vm = ConversationsViewModel()
     var body: some View {
         ZStack(alignment:.bottomTrailing){
 
                 VStack{
-                    List(0 ..< 3){conversation in
-                        NavigationLink(destination:selectedUser != nil ? ChatsView(user:selectedUser! ): nil) {
-                            ConversationCell()
+                    List(vm.conversations){conversation in
+                        
+                     
+                            ConversationCell(conversationViewModel: ConversationViewModel(conversation: conversation))
                                    .listRowSeparator(.hidden)
-                        }
+                                   .onTapGesture {
+                                       selectedUser = conversation.user
+                                       showChatView = true
+
+                                   }
+                        
                     }
                     .listStyle(.plain)
                

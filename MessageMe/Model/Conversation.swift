@@ -11,5 +11,7 @@ struct Conversation: Codable, Identifiable {
     let messages: [Message]
     let users: [String]
     let isGroup: Bool
+    var user: User?
+
     
 }

@@ -7,12 +7,6 @@
 
 import Foundation
 import Firebase
-struct MockMessage: Identifiable{
-    var id = UUID()
-    let isFromCurrentUser: Bool
-    let messageText:String
-}
-
 struct Message: Identifiable,Codable{
     var id : String?
     let fromId: String
@@ -20,6 +14,7 @@ struct Message: Identifiable,Codable{
     let read : Bool
     let timestamp: Timestamp
     let text: String
+    var user: User?
     
     
 }

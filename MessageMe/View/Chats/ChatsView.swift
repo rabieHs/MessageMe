@@ -10,6 +10,7 @@ import SwiftUI
 struct ChatsView: View {
     @State var messageText = ""
    private  let user: User
+    
     @ObservedObject var vm : ChatViewModel
     init(user:User) {
         self.user = user

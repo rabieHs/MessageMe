@@ -63,6 +63,7 @@ class AuthenticationViewModel: NSObject, ObservableObject{
     }
     
     func fetchUser(){
+        
         guard let uid = userSession?.uid else {return}
         Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
             
@@ -75,4 +76,63 @@ class AuthenticationViewModel: NSObject, ObservableObject{
             print(userModel.username)
         }
     }
+    func fetchUser(by id: String, completion: @escaping (User?) -> Void) {
+        Firestore.firestore().collection("users").document(id).getDocument { snapshot, error in
+            if let error = error {
+                print("Error getting user: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let snapshot = snapshot, snapshot.exists else {
+                print("User not found")
+                completion(nil)
+                return
+            }
+            
+            do {
+                if let user = try? snapshot.data(as: User.self) {
+                    completion(user)
+                } else {
+                    print("Document does not contain valid user data")
+                    completion(nil)
+                }
+            } catch {
+                print("Error decoding user: \(error.localizedDescription)")
+                completion(nil)
+            }
+        }
+    }
+
+    func fetchUser(by id: String) -> User? {
+        var user: User?
+
+        Firestore.firestore().collection("users").document(id).getDocument { snapshot, error in
+         
+            if let error = error {
+                print("Error getting user: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let snapshot = snapshot, snapshot.exists else {
+                print("User not found")
+                return
+            }
+            
+     
+                user = try? snapshot.data(as: User.self)
+                print(user?.profileImage)
+                
+           
+        }
+        print("user: \(user?.username)")
+        if user != nil {
+            return user
+        }else{
+            print("nullable rturn")
+            return nil
+        }
+     
+    }
+
 }
